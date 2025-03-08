@@ -2,8 +2,10 @@
 // NEW AND IMPORVED : COFFEEINKED.COM
 
 // ✅ Fetch sparkle color from the <meta> tag (defaults to "#eea795" if not set)
-var metaColor = document.querySelector('meta[name="text:Sparkle Color"]');
-var colour = metaColor ? metaColor.getAttribute("content") : "#eea795";
+var rootStyle = getComputedStyle(document.documentElement);
+var colour = rootStyle.getPropertyValue("--sparkle-color").trim() || "#eea795"; // Default if not set
+
+// THIS GOES INTO A JS.FILE
 
 var sparkles = 200; // Number of sparkles
 var x = ox = 400, y = oy = 300;
