@@ -1,0 +1,19 @@
+/*coffeeinked.com*/
+
+@font-face { 
+    font-family: 'sweet pea'; 
+    src: url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/sweet_pea_2.woff2') format('woff2'),
+         url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/sweet_pea_2.woff') format('woff'),
+         url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/sweet_pea_2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+@font-face {
+    font-family: 'Bombshell Pro';
+    src: url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/bombshell_pro.ttf') format('woff2'),
+         url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/bombshell_pro.ttf') format('woff'),
+         url('https://coffeenutsthemes.github.io/itscoffeeinked.github.io/fonts/bombshell_pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
