@@ -81,11 +81,12 @@ function cleanupReblogBlockquotes() {
     });
 
     // Remove Empty <p> and <blockquote> Elements, but Keep Those with Images
-    $(".post p, .post blockquote").each(function () {
+    $(".postwrap p, .postwrap blockquote").each(function () {
         if (!$(this).text().trim() && $(this).children().not("img").length === 0) {
             $(this).remove();
         }
     });
+
 
     // Unwrap Blockquotes inside Specific Containers
     $(".shorten blockquote, .reblogs blockquote, .poetry blockquote").each(function () {
