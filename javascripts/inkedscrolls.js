@@ -81,7 +81,7 @@ function cleanupReblogBlockquotes() {
     });
 
     // Remove Empty <p> and <blockquote> Elements, but Keep Those with Images
-    $("p, blockquote").each(function () {
+    $(".post p, .post blockquote").each(function () {
         if (!$(this).text().trim() && $(this).children().not("img").length === 0) {
             $(this).remove();
         }
