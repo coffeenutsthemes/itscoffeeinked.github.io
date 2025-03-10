@@ -1,5 +1,14 @@
-// glittertrail 2025 
-// NEW AND IMPORVED : COFFEEINKED.COM
+
+/************************************************************************************
+* (c) 2005 mf2fm web-design *
+*  http://www.mf2fm.com/rv  = old codes *
+
+* (c) glittertrail 2025 - by Preeya
+* NEW AND IMPROVED 
+* revamped codes for modern browsers 
+  -- by COFFEEINKED.COM
+************************************************************************************/
+
 
 // ✅ Fetch sparkle color from the <meta> tag (defaults to "#eea795" if not set)
 var rootStyle = getComputedStyle(document.documentElement);
