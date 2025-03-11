@@ -107,25 +107,31 @@ $(function () {
 $(document).ready(function () {
     $.localScroll();
 
-   $('.post img').each(function () {
+    // Ensure images are wrapped in <a> for lightbox
+    $('.post img').each(function () {
         var img = $(this);
         var parentLink = img.parent('a');
 
-        // Ensure it's wrapped in an <a> tag
         if (!parentLink.length) {
             img.wrap('<a href="#"></a>');
             parentLink = img.parent('a');
         }
 
-        // Assign the necessary lightbox attributes
         var photoWidth = img.width();
         var photoHeight = img.height();
         var lowRes = img.attr('src');
-        var highRes = img.attr('src'); // Ideally, replace this with a larger version URL
+        var highRes = img.attr('src');
 
         parentLink.attr('onclick', "Tumblr.Lightbox.init([{ width: " + photoWidth + ", height: " + photoHeight + ", low_res: '" + lowRes + "', high_res: '" + highRes + "' }]); $('body').toggleClass('tumblr_lightbox_active'); return false;");
     });
+
+    // Disable autoplay and mute on videos
+    $("video").each(function () {
+        $(this).removeAttr("autoplay").removeAttr("muted");
+        this.pause(); // Ensure the video is stopped initially
+    });
 });
+
 
 $(function () {
     // Resize videos
