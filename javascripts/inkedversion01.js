@@ -43,7 +43,7 @@ $(function () {
         }
     );
 
-    ("#wrap").fitVids();
+    $("#wrap").fitVids();
     
     // Back-to-top Button
     var offset = 220;
