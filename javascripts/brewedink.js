@@ -1,5 +1,3 @@
-
-
 // (C) 2025 : Preeya - CoffeeInked.com
 
 $(function () {
@@ -109,20 +107,23 @@ $(function () {
 $(document).ready(function () {
     $.localScroll();
 
-    $('.addlight').each(function () {
-        $(this).on('click', function () {
-            var lbArray = [];
-            var arrayContents = {
-                "width": $(this).data('width'),
-                "height": $(this).data('height'),
-                "low_res": $(this).data("lowres"),
-                "high_res": $(this).data('highres')
-            };
-            lbArray.push(arrayContents);
-            Tumblr.Lightbox.init(lbArray, 1);
-            $('body').toggleClass('tumblr_lightbox_active');
-            return false;
-        });
+   $('.post img').each(function () {
+        var img = $(this);
+        var parentLink = img.parent('a');
+
+        // Ensure it's wrapped in an <a> tag
+        if (!parentLink.length) {
+            img.wrap('<a href="#"></a>');
+            parentLink = img.parent('a');
+        }
+
+        // Assign the necessary lightbox attributes
+        var photoWidth = img.width();
+        var photoHeight = img.height();
+        var lowRes = img.attr('src');
+        var highRes = img.attr('src'); // Ideally, replace this with a larger version URL
+
+        parentLink.attr('onclick', "Tumblr.Lightbox.init([{ width: " + photoWidth + ", height: " + photoHeight + ", low_res: '" + lowRes + "', high_res: '" + highRes + "' }]); $('body').toggleClass('tumblr_lightbox_active'); return false;");
     });
 });
 
