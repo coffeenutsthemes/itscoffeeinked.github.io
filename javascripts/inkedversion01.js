@@ -42,8 +42,6 @@ $(function () {
             $(this).stop().fadeTo("slow", 1);
         }
     );
-
-    $("#wrap").fitVids();
     
     // Back-to-top Button
     var offset = 220;
