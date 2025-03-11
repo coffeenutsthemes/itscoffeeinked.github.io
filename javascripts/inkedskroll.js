@@ -87,15 +87,18 @@ function cleanupReblogBlockquotes() {
         }
     });
 
-
     // Unwrap Blockquotes inside Specific Containers
     $(".shorten blockquote, .reblogs blockquote, .poetry blockquote").each(function () {
         $(this).replaceWith($(this).html());
     });
 
     // Remove Tumblr Attribution & "via" Mentions
-    $("p:has(a.tumblr_blog), p:contains('Source:'), p:contains('via')").remove();
+    $("p:has(a.tumblr_blog)").remove();
     $("a.tumblr_blog").remove();
+    $("p:has(a.tumblr_blog)").each(function() {
+        var text = $(this).text().replace(/:\s*$/, ''); // Remove only trailing colon
+        $(this).text(text.trim()); // Trim any excess spaces
+    });
 
     // Clean Quote Citations
     $(".qsource:contains('via'), .qsource:contains('Source:')").remove();
