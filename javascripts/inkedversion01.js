@@ -43,6 +43,8 @@ $(function () {
         }
     );
 
+    ("#wrap").fitVids();
+    
     // Back-to-top Button
     var offset = 220;
     var duration = 500;
